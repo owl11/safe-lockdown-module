@@ -9,7 +9,7 @@ import {SafeTransaction, SafeProtocolAction} from "@safe/DataTypes.sol";
 import {Safe} from "@safe/Safe.sol";
 import {SafeProxy} from "@safe/proxies/SafeProxy.sol";
 import {TokenCallbackHandler} from "@safe/handler/TokenCallbackHandler.sol";
-import {Plugin} from "../src/Plugin.sol";
+import {Plugin} from "../src/lockDownPlugin.sol";
 import {Enum} from "@safe/common/Enum.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 import {Deploy} from "../script/Deploy.s.sol";
@@ -87,9 +87,9 @@ contract PluginTest is Test {
     function setUp() public {
         vm.startPrank(owner);
         vm.selectFork(vm.createFork(vm.envString("GOERLI_RPC_URL")));
-        plugin = new Plugin();
         registry = new SafeProtocolRegistry(owner);
         manager = new SafeProtocolManager(owner, address(registry));
+        plugin = new Plugin(address(manager), address(registry));
         singleton = new Safe();
         proxy = new SafeProxy(address(singleton));
         handler = new TokenCallbackHandler();
