@@ -10,7 +10,7 @@ contract DeployContracts is Script {
     function run(address owner) public returns (Plugin, SafeProtocolManager, SafeProtocolRegistry) {
         SafeProtocolRegistry registry = new SafeProtocolRegistry(owner);
         SafeProtocolManager manager = new SafeProtocolManager(owner, address(registry));
-        Plugin plugin = new Plugin();
+        Plugin plugin = new Plugin(address(manager), address(registry));
         return (plugin, manager, registry);
     }
 }
