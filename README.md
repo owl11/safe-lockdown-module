@@ -1,6 +1,5 @@
-# Foundry Safe{Core} lockdown modeule [winner of second place prize in ETHGLobal 2023](https://ethglobal.com/showcase/safe-lock-yaw7r) 
-
-*A [Foundry](https://getfoundry.sh/) template for testing and deploying [Safe{Core} Protocol Plugins](https://docs.safe.global/safe-core-protocol/plugins). Automates setting up a manager, register & Safe; plus enables them so you can focus on writing the plugin logic.*
+# Safe{Core} lockdown modeule 
+winner of second place prize in [ETHGLobal 2023](https://ethglobal.com/showcase/safe-lock-yaw7r) 
 
 **This template is meant for testnet & quick experimentation only. You should write and audit your own deployment and testing scripts in production**
 
